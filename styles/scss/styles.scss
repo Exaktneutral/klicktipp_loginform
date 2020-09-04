@@ -9,10 +9,17 @@ $storm-gray: #74788D;
 $primary-color: #556EE6;
 $trout-color: #495057;
 $header-color: rgba(85, 110, 230, 0.25);
+$shadow: rgba(0, 0, 0, 0.1);
 $ghost-color: #CED4DA;
 $spacing: 24px;
 
 // Mixins
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
 @mixin placeholder {
     color: $trout-color;
     font-size: $font-size-s;
@@ -97,6 +104,7 @@ a {
             background: $white;
             overflow: hidden;
             border-radius: 4px;
+            @include box-shadow(0 5px 10px 0px $shadow);
 
             // Form
             .form-login {

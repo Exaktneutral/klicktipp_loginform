@@ -27,7 +27,7 @@ $spacing: 24px;
     font-size: $font-size-s;
     font-family: $font-stack;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1; //prevent overlap on Safari
 }
 
 @mixin flex {

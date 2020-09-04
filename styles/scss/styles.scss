@@ -14,6 +14,11 @@ $ghost-color: #CED4DA;
 $spacing: 24px;
 
 // Mixins
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 @mixin box-shadow($value) {
     -webkit-box-shadow: $value;
     -moz-box-shadow: $value;
@@ -32,10 +37,32 @@ $spacing: 24px;
 
 @mixin flex {
     display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
     display: flex;
+}
+
+@mixin wrap {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin flex-direction {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@mixin justify-content {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+@mixin align-items {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 // Normalize 
@@ -50,7 +77,7 @@ html {
     font-family: $font-stack;
     font-size: $font-size-s;
     background: $master-color;
-    box-sizing: border-box;
+    @include border-box;
 }
 
 // Typo 
@@ -96,10 +123,10 @@ a {
         width: 100%;
         min-height: 100vh;
         @include flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include wrap;
+        @include flex-direction;
+        @include justify-content;
+        @include align-items;
 
         .wrap-login {
             width: 451px;
@@ -118,6 +145,8 @@ a {
                     background: $header-color;
                     padding: 24px 0 0 24px;
                     @include flex;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
                     justify-content: space-between;
 
                     p {
@@ -172,7 +201,7 @@ a {
                     padding: 8px 12px;
                     border: 1px solid $ghost-color;
                     border-radius: 4px;
-                    box-sizing: border-box;
+                    @include border-box;
                     display: block;
                     margin-bottom: 16px;
                 }

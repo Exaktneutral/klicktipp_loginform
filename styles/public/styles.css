@@ -10,6 +10,11 @@ html {
   background: #E5E5E5;
   box-sizing: border-box; }
 
+h1 {
+  color: #556EE6;
+  font-size: 16px;
+  font-weight: 500; }
+
 p {
   color: #74788D;
   font-weight: 300;
@@ -64,9 +69,6 @@ a {
           .content .container-login .wrap-login .form-login .form-header p {
             color: #556EE6;
             margin: 0 0 8px; }
-            .content .container-login .wrap-login .form-login .form-header p.form-title {
-              font-size: 16px;
-              font-weight: 500; }
           .content .container-login .wrap-login .form-login .form-header .header-image > img {
             position: absolute;
             right: 0;

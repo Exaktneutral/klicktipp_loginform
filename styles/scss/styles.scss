@@ -17,6 +17,8 @@ $spacing: 24px;
 @mixin box-shadow($value) {
     -webkit-box-shadow: $value;
     -moz-box-shadow: $value;
+    -o-box-shadow: $value;
+    -ms-box-shadow: $value;
     box-shadow: $value;
 }
 
